@@ -21,7 +21,6 @@ public class ChangeGravity : MonoBehaviour
 
             playerController.IsOnZAxis = true;
             
-
             Physics.gravity = GravityChange;
             IsCollidered = true;
 
@@ -31,8 +30,10 @@ public class ChangeGravity : MonoBehaviour
         {
             PlayerController playerController = Player.GetComponent<PlayerController>();
 
+            playerController.IsOnXAxis = false;
             playerController.IsOnZAxis = false;
-            
+            playerController.IsOnYAxis = false;
+
 
             Physics.gravity = ReturnGravityChange;
 

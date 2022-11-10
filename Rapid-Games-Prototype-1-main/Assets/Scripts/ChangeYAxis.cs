@@ -32,6 +32,8 @@ public class ChangeYAxis : MonoBehaviour
             Physics.gravity = ReturnGravity;
             Collidered = false;
 
+            playerController.IsOnXAxis = false;
+            playerController.IsOnZAxis = false;
             playerController.IsOnYAxis = false;
 
             playerController.jump = ReturnChangeJumpPower;

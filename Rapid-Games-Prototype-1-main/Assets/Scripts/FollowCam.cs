@@ -22,9 +22,12 @@ public class FollowCam : MonoBehaviour
     }
 
     public Vector3 offsetDirection;
+    public Transform player;
 
     void Update()
     {
+        transform.position = player.transform.position + new Vector3(0, 1, -5);
+
         if (target == null)
         {
             target = FindObjectOfType<PlayerController>().gameObject;

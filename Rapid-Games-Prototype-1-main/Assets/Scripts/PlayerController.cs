@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Vector3 jump;
     public float jumpForce = 2.0f;
+    public Transform PlayerHeight;
 
     public bool isGrounded;
     Rigidbody rb;
@@ -129,25 +130,46 @@ public class PlayerController : MonoBehaviour
             //var projectedVec = Vector3.ProjectOnPlane(worldSpaceCameraRelativeDir, Vector3.up);
             //projectedVec.y = 0;
 
+            //if (IsOnZAxis)
+            //{
+            //    //if (PlayerHeight.position.y > 25)
+            //    //{
+            //    //    direction = new Vector3(horizInput, vertInput, 0);
+            //    //    direction = Quaternion.Euler(0, -135, 0) * direction;
+            //    //    Debug.Log("Changed to Other Z");
+            //    //}
+            //    else
+            //    {
+            //        direction = new Vector3(horizInput, vertInput, 0);
+            //        direction = Quaternion.Euler(0, -135, 0) * direction;
+            //        Debug.Log("Changed to Z");
+            //    }
+            //}
+
             if (IsOnZAxis)
             {
                 direction = new Vector3(horizInput, vertInput, 0);
                 direction = Quaternion.Euler(0, -135, 0) * direction;
+                Debug.Log("Changed to Z");
             }
 
             if (IsOnYAxis)
             {
                 direction = new Vector3(horizInput, 0, vertInput);
                 direction = Quaternion.Euler(0, -135, 0) * direction;
+                Debug.Log("Changed to Y");
             }
 
             if (IsOnXAxis)
             {
-                direction = new Vector3( 0, vertInput, horizInput); 
+                direction = new Vector3(horizInput, vertInput--, 0); 
                 direction = Quaternion.Euler(0, -135, 0) * direction;
+                Debug.Log("Changed to X");
             }
 
-            if (getPlanarVelocitySqr() < maxSpeedSqr)
+            
+
+                if (getPlanarVelocitySqr() < maxSpeedSqr)
             {
                 rb.AddForce(direction * acceleration, ForceMode.Force);
             }
