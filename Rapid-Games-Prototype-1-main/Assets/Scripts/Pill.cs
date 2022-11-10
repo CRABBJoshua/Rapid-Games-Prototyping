@@ -5,22 +5,22 @@ using UnityEngine;
 public class Pill : MonoBehaviour
 {
     public float timeSpeed = 1;
+    public GameObject Target;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            Time.timeScale = timeSpeed;
-
-            Invoke("Delay", 3.0f);
- 
+            StartCoroutine(Delay());
         }
     }
 
-    void SetBackToNormal()
+    public IEnumerator Delay()
     {
-        Debug.Log("Delayed!");
-        //Time.timeScale = timeSpeed = 1;
+        Time.timeScale = timeSpeed;
+        yield return new WaitForSeconds(1);
+        Time.timeScale = timeSpeed = 1;
+        Destroy(gameObject);
     }
 }
 

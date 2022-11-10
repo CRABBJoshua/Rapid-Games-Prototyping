@@ -11,8 +11,8 @@ public class LevelTimer : MonoBehaviour, ITimer
 {
     public static LevelTimer Instance { get; private set; }
 
-    public int maxTime;
-    protected int remainingTime;
+    public int maxTime = 150;
+    protected int remainingTime = 150;
 
     public UnityEvent started = new UnityEvent();
     public UnityEvent stopped = new UnityEvent();
