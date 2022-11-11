@@ -22,7 +22,7 @@ public class KillVolume : MonoBehaviour
             playerController.IsOnZAxis = false;
             playerController.IsOnYAxis = false;
 
-            playerController.jump = ChangeJumpPower;
+            playerController.jump = RestJumpForce;
 
             LevelManager.Instance.setPlayerPosition(playerController);
         }
