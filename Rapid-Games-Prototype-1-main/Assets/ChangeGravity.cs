@@ -20,7 +20,9 @@ public class ChangeGravity : MonoBehaviour
             PlayerController playerController = Player.GetComponent<PlayerController>();
 
             playerController.IsOnZAxis = true;
-            
+            playerController.IsOnYAxis = false;
+            playerController.IsOnXAxis = false;
+
             Physics.gravity = GravityChange;
             IsCollidered = true;
 

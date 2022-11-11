@@ -22,6 +22,8 @@ public class ChangeXAxis : MonoBehaviour
             Collision = true;
 
             playerController.IsOnXAxis = true;
+            playerController.IsOnZAxis = false;
+            playerController.IsOnYAxis = false;
 
             playerController.jump = ChangeHeightPower;
         }

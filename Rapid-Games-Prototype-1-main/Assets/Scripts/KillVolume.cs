@@ -6,6 +6,8 @@ public class KillVolume : MonoBehaviour
 {    
     protected const string playerTag = "Player";
     public Vector3 ResetGravity;
+    public Vector3 RestJumpForce;
+    
 
     void OnTriggerEnter(Collider other)
     {
@@ -19,6 +21,8 @@ public class KillVolume : MonoBehaviour
             playerController.IsOnXAxis = false;
             playerController.IsOnZAxis = false;
             playerController.IsOnYAxis = false;
+
+            playerController.jump = ChangeJumpPower;
 
             LevelManager.Instance.setPlayerPosition(playerController);
         }

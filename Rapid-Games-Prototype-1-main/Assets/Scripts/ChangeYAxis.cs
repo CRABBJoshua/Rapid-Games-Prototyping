@@ -22,6 +22,8 @@ public class ChangeYAxis : MonoBehaviour
             Collidered = true;
 
             playerController.IsOnYAxis = true;
+            playerController.IsOnXAxis = false;
+            playerController.IsOnZAxis = false;
 
             playerController.jump = ChangeJumpPower;
         }
